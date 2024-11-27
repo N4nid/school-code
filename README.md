@@ -1,2 +1,2 @@
 # school-code
-Just some Code for school
+Just some Code for school.
