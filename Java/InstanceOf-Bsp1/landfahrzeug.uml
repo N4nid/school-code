@@ -1,0 +1,43 @@
+﻿[Files]
+File0=Java\fahrzeug.java
+File1=Java\landfahrzeug.java
+
+[Box:  - fahrzeug]
+X=20
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - landfahrzeug]
+X=416
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=12
+ShowObjectDiagram=0
+
+[Connections]
+V0=landfahrzeug#fahrzeug#Inheritends####0#0#0###0#0
+
+[Interactive]
+I0=
+

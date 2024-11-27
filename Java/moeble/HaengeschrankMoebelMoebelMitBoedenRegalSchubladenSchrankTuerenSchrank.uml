@@ -1,0 +1,91 @@
+﻿[Files]
+File0=Java\moeble\Haengeschrank.java
+File1=Java\moeble\Moebel.java
+File2=Java\moeble\MoebelMitBoeden.java
+File3=Java\moeble\Regal.java
+File4=Java\moeble\SchubladenSchrank.java
+File5=Java\moeble\TuerenSchrank.java
+
+[Box:  - Haengeschrank]
+X=115
+Y=282
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - Moebel]
+X=579
+Y=49
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - MoebelMitBoeden]
+X=553
+Y=282
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - Regal]
+X=759
+Y=452
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - SchubladenSchrank]
+X=887
+Y=282
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - TuerenSchrank]
+X=431
+Y=452
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=12
+ShowObjectDiagram=0
+
+[Connections]
+V0=Haengeschrank#Moebel#Inheritends####0#0#0###0#0
+V1=MoebelMitBoeden#Moebel#Inheritends####0#0#0###0#0
+V2=Regal#MoebelMitBoeden#Inheritends####0#0#0###0#0
+V3=SchubladenSchrank#Moebel#Inheritends####0#0#0###0#0
+V4=TuerenSchrank#MoebelMitBoeden#Inheritends####0#0#0###0#0
+
+[Interactive]
+I0=
+

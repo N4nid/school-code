@@ -1,0 +1,1 @@
+javac -classpath /home/nanid/nextcloud/home/01_Home/inf/JavaEditor/Java/;/home/nanid/nextcloud/home/01_Home/inf/JavaEditor/JEClasses.jar --module-path /home/nanid/nextcloud/javastuff/javafx-sdk-17.0.8/lib --add-modules=javafx.controls,javafx.media,javafx.web -deprecation -g -encoding UTF-8 test.java

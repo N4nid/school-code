@@ -1,0 +1,10 @@
+class Knoten {
+  public Knoten naechstes;
+  public int element;
+  
+  public Knoten(int meinElement)  {
+    naechstes = null;
+    element = meinElement;
+  }
+   
+}

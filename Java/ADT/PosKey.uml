@@ -1,0 +1,40 @@
+﻿[Files]
+File0=T:\GYM\Schulweit\Informatik\Inf_JS-LK-St\Materialien\ADT\Bsp2024\BaumtestFX.java
+File1=T:\GYM\Schulweit\Informatik\Inf_JS-LK-St\Materialien\ADT\Bsp2024\PosKey.java
+
+[Box:  - BaumtestFX]
+X=648
+Y=185
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - PosKey]
+X=20
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=12
+ShowObjectDiagram=0
+
+[Interactive]
+I0=
+

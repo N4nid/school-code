@@ -1,0 +1,91 @@
+﻿[Files]
+File0=Java\Anwendung_instanceOf.java
+File1=Java\fahrzeug.java
+File2=Java\landfahrzeug.java
+File3=Java\motorrad.java
+File4=Java\pkw.java
+File5=Java\radfahrzeug.java
+
+[Box:  - Anwendung_instanceOf]
+X=443
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - fahrzeug]
+X=47
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - landfahrzeug]
+X=74
+Y=273
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - motorrad]
+X=222
+Y=550
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - pkw]
+X=20
+Y=550
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Box:  - radfahrzeug]
+X=165
+Y=422
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+FontSize=12
+FontName=Segoe UI
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=1
+ShowConnections=0
+Fontname=Segoe UI
+Fontsize=12
+ShowObjectDiagram=0
+
+[Connections]
+V0=Anwendung_instanceOf#fahrzeug#Aggregation####0#0#0###0#0
+V1=landfahrzeug#fahrzeug#Inheritends####0#0#0###0#0
+V2=motorrad#radfahrzeug#Inheritends####0#0#0###0#0
+V3=pkw#radfahrzeug#Inheritends####0#0#0###0#0
+V4=radfahrzeug#landfahrzeug#Inheritends####0#0#0###0#0
+
+[Interactive]
+I0=
+

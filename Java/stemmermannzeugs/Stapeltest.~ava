@@ -1,0 +1,47 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+/**
+ *
+ * Beschreibung
+ *
+ * @version 1.0 vom 21.10.2024
+ * @author 
+ */
+
+public class Stapeltest extends JFrame {
+  // Anfang Attribute
+  // Ende Attribute
+  
+  public Stapeltest() { 
+    // Frame init
+    super();
+    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    int frameWidth = 300;
+    int frameHeight = 300;
+    setSize(frameWidth, frameHeight);
+    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+    int x = (d.width - getSize().width) / 2;
+    int y = (d.height - getSize().height) / 2;
+    setLocation(x, y);
+    setTitle("Stapeltest");
+    setResizable(false);
+    Container cp = getContentPane();
+    cp.setLayout(null);
+    // Anfang Komponenten
+    
+    // Ende Komponenten
+    
+    setVisible(true);
+  } // end of public Stapeltest
+  
+  // Anfang Methoden
+  
+  public static void main(String[] args) {
+    new Stapeltest();
+  } // end of main
+  
+  // Ende Methoden
+} // end of class Stapeltest

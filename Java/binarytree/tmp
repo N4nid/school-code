@@ -1,0 +1,17 @@
+Prism pipeline init order: es2 sw 
+Using Double Precision Marlin Rasterizer
+Using dirty region optimizations
+Not using texture mask for primitives
+Not forcing power of 2 sizes for textures
+Using hardware CLAMP_TO_ZERO mode
+Opting in for HiDPI pixel scaling
+Prism pipeline name = com.sun.prism.es2.ES2Pipeline
+Loading ES2 native library ... prism_es2
+	succeeded.
+GLFactory using com.sun.prism.es2.X11GLFactory
+(X) Got class = class com.sun.prism.es2.ES2Pipeline
+Prism pipeline name = com.sun.prism.sw.SWPipeline
+(X) Got class = class com.sun.prism.sw.SWPipeline
+Initialized prism pipeline: com.sun.prism.sw.SWPipeline
+grad: 0
+QuantumRenderer: shutdown
