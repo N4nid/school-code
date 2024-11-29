@@ -31,6 +31,66 @@ public class binarytree {
     }
   }
 
+  public node depthSearch(int key) {
+    stapel todo = new stapel();
+    stapelElement start = new stapelElement(this.root);
+    todo.push(start);
+    System.out.println("> depthSearch:");
+    while (todo.last != null) {
+      Object elem = todo.pop().element;
+      node currentNode;
+      if (elem instanceof node) {
+        currentNode = (node) elem;
+        System.out.println(currentNode.getKey());
+      } else {
+        throw new Error("not a node in the queue");
+      }
+      if (currentNode != null && currentNode.getKey() == key) {
+        return currentNode;
+      }
+      // Nachbarn adden
+      // da es sich um ein Binärbaum handelt, muss nicht überprüft werden ob sie noch
+      // nicht besucht worden sind
+      if (currentNode.getLeft() != null)
+        todo.push(new stapelElement(currentNode.getLeft()));
+      if (currentNode.getRight() != null)
+        todo.push(new stapelElement(currentNode.getRight()));
+
+    }
+
+    return null;
+  }
+
+  public node widthSearch(int key) {
+    schlange todo = new schlange();
+    schlangeElement start = new schlangeElement(this.root);
+    todo.enqueue(start);
+    System.out.println("> widthSearch:");
+    while (todo.last != null) {
+      Object elem = todo.dequeue().element;
+      node currentNode;
+      if (elem instanceof node) {
+        currentNode = (node) elem;
+        System.out.println(currentNode.getKey());
+      } else {
+        throw new Error("not a node in the stack");
+      }
+      if (currentNode != null && currentNode.getKey() == key) {
+        return currentNode;
+      }
+      // Nachbarn adden
+      // da es sich um ein Binärbaum handelt, muss nicht überprüft werden ob sie noch
+      // nicht besucht worden sind
+      if (currentNode.getLeft() != null)
+        todo.enqueue(new schlangeElement(currentNode.getLeft()));
+      if (currentNode.getRight() != null)
+        todo.enqueue(new schlangeElement(currentNode.getRight()));
+
+    }
+
+    return null;
+  }
+
   public node find(int key) {
     if (this.root != null) {
       if (this.root.getKey() == key) {

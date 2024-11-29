@@ -23,6 +23,7 @@ public class binarytreeMain extends Application {
   Scene scene = new Scene(root, 1000, 1000);
   Group visualisierung = new Group();
   binarytree baum = new binarytree();
+  node nodeToHL = null;
   private Button button1 = new Button();
   private Button button2 = new Button();
   private Button button3 = new Button();
@@ -30,8 +31,9 @@ public class binarytreeMain extends Application {
   private Button button5 = new Button();
   private TextField textField1 = new TextField();
   private Slider slider1 = new Slider(100, 500, 200);
+
   // end attributes
-  
+
   public void start(Stage primaryStage) {
     // start components
     button1.setLayoutX(10);
@@ -40,9 +42,9 @@ public class binarytreeMain extends Application {
     button1.setPrefWidth(80);
     button1.setText("insert");
     button1.setOnAction(
-    (event) -> {
-      btn1(event);
-    });
+        (event) -> {
+          btn1(event);
+        });
     root.getChildren().add(button1);
     button2.setLayoutX(110);
     button2.setLayoutY(10);
@@ -50,9 +52,9 @@ public class binarytreeMain extends Application {
     button2.setPrefWidth(80);
     button2.setText("delete");
     button2.setOnAction(
-    (event) -> {
-      btn2(event);
-    });
+        (event) -> {
+          btn2(event);
+        });
     root.getChildren().add(button2);
     button3.setLayoutX(210);
     button3.setLayoutY(10);
@@ -60,9 +62,9 @@ public class binarytreeMain extends Application {
     button3.setPrefWidth(80);
     button3.setText("clear");
     button3.setOnAction(
-    (event) -> {
-      btn3(event);
-    });
+        (event) -> {
+          btn3(event);
+        });
     root.getChildren().add(button3);
     button4.setLayoutX(310);
     button4.setLayoutY(10);
@@ -70,9 +72,9 @@ public class binarytreeMain extends Application {
     button4.setPrefWidth(80);
     button4.setText("find");
     button4.setOnAction(
-    (event) -> {
-      btn4(event);
-    });
+        (event) -> {
+          btn4(event);
+        });
     root.getChildren().add(button4);
     textField1.setLayoutX(10);
     textField1.setLayoutY(40);
@@ -85,11 +87,11 @@ public class binarytreeMain extends Application {
     button5.setPrefWidth(80);
     button5.setText("bsp");
     button5.setOnAction(
-    (event) -> {
-      btn5(event);
-    });
+        (event) -> {
+          btn5(event);
+        });
     root.getChildren().add(button5);
-    
+
     root.getChildren().add(visualisierung);
     slider1.setLayoutX(510);
     slider1.setLayoutY(10);
@@ -115,7 +117,7 @@ public class binarytreeMain extends Application {
   public void test() {
     int arr[] = { 9, 5, 16, 3, 7, 12, 19, 14, 18, 20 };
     baum = new binarytree(new node(arr[0]));
-    
+
     for (int i = 1; i < arr.length; i++) {
       baum.insert(arr[i]);
     }
@@ -135,10 +137,10 @@ public class binarytreeMain extends Application {
     visualisierung.getChildren().clear();
     int offset;
     int yOffset = 50;
-    
-    offset = (int)slider1.getValue();
-    visualizeTree(baum.root, offset, (offset*2), yOffset); // 25 * Tiefe = offset ?
-    
+
+    offset = (int) slider1.getValue();
+    visualizeTree(baum.root, offset, (offset * 2), yOffset); // 25 * Tiefe = offset ?
+
   }
 
   public void visualizeTree(node nodeToVisualize, double offset, double x, double y) {
@@ -147,18 +149,21 @@ public class binarytreeMain extends Application {
       int height = 20;
       int width = 50;
       int yOffset = 50;
-      
+
       keyTxt.setLayoutX(x);
       keyTxt.setLayoutY(y);
       keyTxt.setPrefHeight(height);
       keyTxt.setPrefWidth(width);
       keyTxt.setText(nodeToVisualize.getKey() + "");
+      if (nodeToVisualize == nodeToHL) {
+        keyTxt.setStyle("-fx-background-color: lime;");
+      }
       visualisierung.getChildren().add(keyTxt);
-      
+
       if (nodeToVisualize.getLeft() != null) {
         double newX = x - offset;
         double newY = y + yOffset;
-        
+
         Line line = new Line();
         line.setStartX(x + (width / 2));
         line.setStartY(y + height);
@@ -170,7 +175,7 @@ public class binarytreeMain extends Application {
       if (nodeToVisualize.getRight() != null) {
         double newX = x + offset;
         double newY = y + yOffset;
-        
+
         Line line = new Line();
         line.setStartX(x + (width / 2));
         line.setStartY(y + height);
@@ -210,9 +215,12 @@ public class binarytreeMain extends Application {
   public void btn4(Event evt) {
     try {
       int key = Integer.parseInt(textField1.getText());
-      node foundNode = baum.find(key);
+      node foundNode = baum.widthSearch(key);
       if (foundNode != null) {
         textField1.setText("found " + foundNode.getKey());
+        nodeToHL = foundNode;
+        show();
+        nodeToHL = null;
       } else {
         textField1.setText("not found");
       }
