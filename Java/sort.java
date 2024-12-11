@@ -1,7 +1,4 @@
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
+import java.util.Random;
 
 /**
  *
@@ -11,36 +8,70 @@ import javafx.stage.Stage;
  * @author
  */
 
-public class sort extends Application {
-  // start attributes
-  // end attributes
-
-  public void start(Stage primaryStage) {
-    Pane root = new Pane();
-    Scene scene = new Scene(root, 284, 262);
-    // start components
-
-    // end components
-
-    primaryStage.setOnCloseRequest(e -> System.exit(0));
-    primaryStage.setTitle("sort");
-    primaryStage.setScene(scene);
-    primaryStage.show();
-    sort();
-  } // end of public sort
-
-  // start methods
+public class sort {
 
   public static void main(String[] args) {
-    launch(args);
+    sort program = new sort();
+    program.doSort();
   } // end of main
 
-  void sort() {
-    int[] arr = { 5, 3, 2, 1 };
+  void doSort() {
+    int[] arr = new int[50];
+    int randRange = 50;
+    // fill array sorted with rand. numbers
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = new Random().nextInt(randRange);
+    }
     printarr(arr);
     // bubble(arr);
-    selection(arr);
+    // selection(arr);
     // insertion(arr);
+    quicksort(arr, 0, arr.length - 1);
+    System.out.println("--- ergeb.:");
+    printarr(arr);
+  }
+
+  void quicksort(int arr[], int start, int end) {
+    if (start < end) {
+      int splitPoint = divide(arr, start, end);
+      System.out.println("splitPoint: " + splitPoint + " - " + arr[splitPoint]);
+      quicksort(arr, start, splitPoint - 1);
+      quicksort(arr, splitPoint + 1, end);
+    }
+  }
+
+  int divide(int arr[], int start, int end) {
+    int left = start;
+    int right = end - 1;
+    int pivot = arr[end];
+
+    while (left < right) {
+      // finde element größer als pivot von links
+      while (left < end && arr[left] <= pivot) {
+        left++;
+      }
+
+      // finde element kleiner als pivot von rechts
+      while (right > start && arr[right] >= pivot) {
+        right--;
+      }
+      // tausche diese
+      if (left < right) {
+        int tmp = arr[left];
+        System.out.println("- switched left:" + tmp + " right:" + arr[right]);
+        arr[left] = arr[right];
+        arr[right] = tmp;
+      }
+    }
+    // tausche pivot falls links größer ist
+    if (arr[left] > pivot) {
+      int tmp = arr[left];
+      System.out.println("# switched left:" + tmp + " right:" + arr[end]);
+      arr[left] = arr[end];
+      arr[end] = tmp;
+    }
+
+    return left; // new pivot index
   }
 
   void insertion(int[] arr) {

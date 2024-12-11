@@ -12,6 +12,7 @@ public class fingeruebung {
   // start attributes
   // end attributes
   int stepsCount = 0;
+  double i = Math.random();
   // start methods
 
   public static void main(String[] args) {
@@ -25,7 +26,8 @@ public class fingeruebung {
     // fill array sorted with rand. numbers
     arr[0] = new Random().nextInt(randRange);
     for (int i = 1; i < arr.length; i++) {
-      arr[i] = arr[i - 1] + new Random().nextInt(randRange);
+      // arr[i] = new Random().nextInt(randRange);
+      arr[i] = arr[i - 1] + new Random().nextInt(randRange);// already sorted
     }
 
     int halfIndex = arr.length / 2;
