@@ -215,7 +215,7 @@ public class binarytreeMain extends Application {
   public void btn4(Event evt) {
     try {
       int key = Integer.parseInt(textField1.getText());
-      node foundNode = baum.widthSearch(key);
+      node foundNode = baum.find(key);
       if (foundNode != null) {
         textField1.setText("found " + foundNode.getKey());
         nodeToHL = foundNode;

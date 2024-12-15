@@ -148,21 +148,16 @@ public class node {
   }
 
   public node find(int key) {
-    if (key < this.key) { // dann links schauen
-      if (this.left != null) { // schaut links
-        if (this.left.getKey() == key) {
-          return this.left;
-        } else {
-          return this.left.find(key); // rekursiv aufrufen um weiter zu schauen
-        }
+    if (this.key == key) {
+      return this;
+    }
+    if (key < this.key) {
+      if (this.left != null) {
+        return this.left.find(key);
       }
-    } else {// selbes wie links nur für rechts
+    } else {
       if (this.right != null) {
-        if (this.right.getKey() == key) {
-          return this.right;
-        } else {
-          return this.right.find(key);
-        }
+        return this.right.find(key);
       }
     }
 
