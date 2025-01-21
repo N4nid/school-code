@@ -59,21 +59,13 @@ public class damenproblem {
         // System.out.println("setzte naeschste");
         solvable = solve(row + 1);
 
-        // System.out.println("# current row: " + row);
-        if (!solvable) {
-          // remove dame with which it did not work
-          damenCounter--;
-          damen[damenCounter] = null;
-          // System.out.println("+++ continuing at ind: " + i + " dame: " + damenCounter);
+        // we come back here to either
+        // try find a working solution
+        // try find another solution
+        // Either way the old Dame has to be removed
+        damenCounter--;
+        damen[damenCounter] = null;
 
-        } else {
-          // remove dame with which it did work, but since we have found a solution,
-          // we need to try the other ones -> "cleanup"
-          damenCounter--;
-          damen[damenCounter] = null;
-          // System.out.println("--- continuing at ind: " + i + " dame: " + damenCounter);
-
-        }
       }
     }
     return solvable;
